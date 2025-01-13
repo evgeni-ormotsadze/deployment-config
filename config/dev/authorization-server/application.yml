@@ -8,7 +8,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  liquibase: classpath:db.changelog/db.changelog-master.xml
+  liquibase: classpath:db.changelog/changelog-master.xml
 #  flyway:
 #    enabled: true # Enable Flyway for database migrations
 #    locations: classpath:/db/migration
