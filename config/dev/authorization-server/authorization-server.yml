@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: authorization-server
+  config:
+    import: "http://config-server:8888/" #"configserver:${CONFIG_SERVER:http://localhost:8888}/"
+  cloud:
+    config:
+      fail-fast: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/redlane-db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  liquibase:
+    change-log: classpath:/db.changelog/changelog-master.xml
+#  flyway:
+#    enabled: true # Enable Flyway for database migrations
+#    locations: classpath:/db/migration
+
+logging:
+  level:
+    org.springframework: WARN #
+    liquibase: DEBUG
+
+
+
